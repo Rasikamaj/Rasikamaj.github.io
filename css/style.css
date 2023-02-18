@@ -28,6 +28,20 @@ img {
     padding-left: 20px;
 }
 
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: violet;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+
+}
+
 header {
     border-bottom: 1px solid rgba(red, green, blue, alpha);
     background: white;
@@ -71,4 +85,35 @@ header.nav-logo span {
     header nav ul {
         display: none;
     }
+}
+
+.hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 100%;
+}
+
+.hero h1 span {
+    display: block;
+    color: aqua;
+
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-top: 0.8rem;
+    font-weight: 500;
+
+}
+
+.hero .btn-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
