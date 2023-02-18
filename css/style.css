@@ -6,13 +6,8 @@
 
 body,
 html {
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -24,46 +19,44 @@ ul {
 }
 
 img {
-    width: 100px;
+    width: 100%;
 }
 
+/* global classes */
 .container {
-
     max-width: 1200px;
     margin: auto;
-    padding-right: 20px;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 .btn {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.5rem;
-    background: violet;
-    color: white;
+    width: fit-content;
+    background: #7700ff;
+    color: #fff;
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 5px;
-    width: fit-content;
-
+    font-weight: 500;
 }
 
-.shadow {
-    width: 100px;
-    height: 100px;
-    background: red;
-    box-shadow: -10px 0 10px rgba(red, green, blue, alpha);
-    transition-duration: 1s;
-    transition-timing-function: ease;
+.btn.btn-secondary {
+    background: #e4ccff;
+    color: #7700ff;
 }
 
-.shadow hover {
-    background: blue;
-}
-
+/* colors */
+/* 7700FF p
+ 1B1B1B b
+ FFFFFF w
+ E4CCFF lp */
+/* styling navigation */
 header {
-    border-bottom: 1px solid rgba(red, green, blue, alpha);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     background: white;
 }
 
@@ -71,9 +64,8 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1rem;
-    font-size: 500;
-
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
 header nav ul {
@@ -81,36 +73,34 @@ header nav ul {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    font-weight: 500;
 }
 
 header nav ul a {
-    color: black;
+    color: #1b1b1b;
 }
 
-header.nav-logo span {
-    color: salmon;
-
-}
-
-header nav ul a :hover {
-    color: darkmagenta;
+header nav ul a:hover {
+    color: #7700ff;
     text-decoration: underline;
 }
 
-header.nav-logo span {
-    color: blueviolet;
+header .nav-logo span {
+    color: #7700ff;
 }
 
-@media screen and (max-width:768) {
+@media screen and (max-width: 768px) {
     header nav ul {
         display: none;
     }
 }
 
+/* Styling Hero Section */
 .hero .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 90vh;
 }
 
 .hero h1 {
@@ -120,15 +110,13 @@ header.nav-logo span {
 
 .hero h1 span {
     display: block;
-    color: aqua;
-
+    color: #7700ff;
 }
 
 .hero h2 {
     font-size: 1.5rem;
     margin-top: 0.8rem;
     font-weight: 500;
-
 }
 
 .hero .btn-wrapper {
@@ -138,24 +126,32 @@ header.nav-logo span {
     margin-bottom: 2rem;
 }
 
-.hero .icon .wrapper a {
+.hero .icon-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.hero .icon-wrapper a {
     display: inline-block;
     width: 40px;
     height: 40px;
     display: grid;
     place-content: center;
-    background: black;
+    background: #1b1b1b;
     color: white;
-    border: radius 100px;
+    border-radius: 100%;
     margin-right: 0.5rem;
-
 }
 
-.hero.icons-wrapper a:hover {
-    background: violet;
+.hero .icon-wrapper a:hover {
+    background: #7700ff;
 }
 
-
+.hero img {
+    width: 300px;
+}
 
 @media screen and (max-width: 992px) {
     .hero .container {
@@ -178,23 +174,85 @@ header.nav-logo span {
     }
 }
 
+/* styling about section */
 .about .container {
-    max-width: 2rem;
-    display: grid;
-    gap: 1rem;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
-.about.content h2 {
+.about .content {
+    max-width: 600px;
+    display: grid;
+    gap: 1rem;
+}
+
+.about .content h2 {
     font-size: 2rem;
     text-transform: capitalize;
     margin-bottom: 2rem;
 }
 
 .about .content h2 span {
-    color: violet;
+    color: #7700ff;
 }
 
-.about.content.btn {
+.about .content .btn {
     margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .about .image {
+        display: none;
+    }
+}
+
+/* styling skills */
+.skills .container {
+    display: grid;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    border-bottom: 5px solid #7700ff;
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 1rem;
+}
+
+.skills .skills-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.skills .skills-wrapper span {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.skills .skills-wrapper i {
+    font-size: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .skills .skills-wrapper span {
+        font-size: 1.5rem;
+    }
 }
